@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <title>상품 리뷰</title>
-    <link rel="stylesheet" href="css/yj.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <main>
-      <!-- 1. 리뷰 작성 영역 -->
+      <!-- 1. 리뷰 작성 영역 (위쪽 박스) -->
       <section class="review-form-section">
         <h2>리뷰 작성</h2>
         <form id="review-form">
           <div class="form-row">
-            <!-- 평점 선택 (1~5점) -->
+            <!-- 평점 선택 -->
             <div class="form-group rating-group">
               <label for="rating">평점</label>
               <select id="rating" name="rating" required>
@@ -55,11 +55,11 @@
         </form>
       </section>
 
-      <!-- 2. 리뷰 목록 표시 영역 -->
+      <!-- 2. 구매자 리뷰 목록 영역 (아래쪽 박스 - 딱 1개만 유지) -->
       <section class="review-list-section">
         <h2>구매자 리뷰 목록</h2>
         <div id="review-list-container">
-          <!-- JS에서 createElement로 동적 생성 -->
+          <!-- JS에서 카드들이 동적으로 들어가는 곳 -->
         </div>
       </section>
     </main>
@@ -68,8 +68,3 @@
     <script src="js/review.js"></script>
   </body>
 </html>
-<section class="review-list-section">
-  <h2>구매자 리뷰 목록</h2>
-  <!-- 이 부분이 반드시 있어야 합니다 -->
-  <div id="review-list-container"></div>
-</section>
