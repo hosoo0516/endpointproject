@@ -125,8 +125,17 @@ async function handleReviewSubmit(e) {
   const token = localStorage.getItem("accessToken");
   if (!token) {
     alert("로그인이 필요한 기능입니다.");
+
+    // [추가] 폼 전체 내용(작성자, 평점, 리뷰내용) 깔끔하게 초기화
+    document.getElementById("review-form").reset();
+
+    // (선택 사항) 필요시 로그인 페이지로 바로 이동시키려면 아래 주석 해제
+    // location.href = 'login.html';
+
     return;
   }
+
+  // 2) 입력 데이터 가져오기 ... (이하 동일)
 
   // 2) 입력 데이터 가져오기
   const productId = getProductId();
