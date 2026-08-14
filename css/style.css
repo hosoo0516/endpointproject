@@ -177,3 +177,22 @@ input[type="text"]:focus {
   line-height: 1.6;
   word-break: break-all;
 }
+/* 1. 기본 안내 문구가 선택되어 있을 때 (연한 회색 적용) */
+select:invalid {
+  color: #9ca3af; /* placeholder와 동일한 연한 회색 */
+}
+
+/* 2. 드롭다운을 열었을 때 실제 별점 옵션들은 다시 진한 글자색으로 */
+option {
+  color: #1f2937;
+}
+
+/* 3. 드롭다운 목록 안에서 첫 번째 안내 문구도 연하게 */
+option[disabled] {
+  color: #9ca3af;
+}
+
+/* 4. 글자가 잘리지 않도록 평점 박스 너비 확장 (150px -> 180px) */
+.rating-group {
+  flex: 0 0 180px;
+}
