@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정태혁 D 주문</title>
+</head>
+<body>
+    <!-- i. 주문생성 페이지
+1. 상품과 주문수량을 선택
+2. 주문버튼 클릭시 주문 API를 호출
+3. 주문완료 후 성공 메시지를 출력
+ii. 내 주문목록 페이지
+1. 로그인 사용자의 주문 목록을 조회
+2. 주문 번호, 주문 상품, 가격, 수량, 총금액, 상태,
+주문일자를 화면에 출력
+3. 로그인 하지 않은 사용자가 주문버튼을 클릭하면
+로그인 필요 메시지를 출력 -->
+<form>
+    <div id = "inputOrder">
+        <input id="article" type="number" placeholder="물품번호"/><br>
+        <input id="quantity" type="number" placeholder="수량"/><br>
+    </div>
+        <button onclick="CreateOrder()">주문확인</button>
+</form>
+<script>
+    const token = "test_token"; //임시 토큰
+    async function CreateOrder(){
+        event.preventDefault(); // form의 기본동작인 새로고침 막기
+        let $article = document.getElementById("article").value;
+        let $quantity = document.getElementById("quantity").value;
+        Number($quantity, $article);
+        console.log($article);
+        console.log($quantity);
+    const response = await fetch("http://teacherdev09.kro.kr:10002/endpoint/api/orders",{ // fetch() API 호출 함수. 주소값 출력 , response(결과물, 영수증) , await는 불러오고 난 후 다음 코드로 이동.
+        method : 'POST', //새로운 데이터 만들기
+        headers : { //보내는 데이터의 형태 저장
+            'Content-Type' : 'application/json', //물품종류칸 , 서버에서 주고받는 데이터는 JSON(문자열로된 객체)형식이라는 것
+            'Authorization' : `Bearer ${token}` //신분증/보안출입증칸 , Bearer(토큰인증방식), 토큰확인
+         }
+    });
+    const data = await response.json(); //response을 json으로 변환(문자열로된 객체)
+    console.log(data);
+};
+    
+</script>
+</body>
+</html>
