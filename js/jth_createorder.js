@@ -1,30 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>정태혁 D 주문</title>
-</head>
-<body>
-    <!-- i. 주문생성 페이지
-1. 상품과 주문수량을 선택
-2. 주문버튼 클릭시 주문 API를 호출
-3. 주문완료 후 성공 메시지를 출력
-ii. 내 주문목록 페이지
-1. 로그인 사용자의 주문 목록을 조회
-2. 주문 번호, 주문 상품, 가격, 수량, 총금액, 상태,
-주문일자를 화면에 출력
-3. 로그인 하지 않은 사용자가 주문버튼을 클릭하면
-로그인 필요 메시지를 출력 -->
-<form>
-    <div id = "inputOrder">
-        <input id="article" type="number" placeholder="물품번호"/><br>
-        <input id="quantity" type="number" placeholder="수량"/><br>
-    </div>
-        <button onclick="CreateOrder(event)">주문확인</button>
-</form>
-<script>
-    const token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3bmZwdm0xM0B0ZXN0LmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzg2Njk2Mjg0LCJleHAiOjE3ODY2OTk4ODR9.j525RyC0wM4mp9Fa2Iv6X9F9GXL2mm6oV-c5AbAmUAyDxGdSGqupWPRpBASPHS7LdY8XlPxdAZA_lnkeK86R9g"; //임시 토큰
+const token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3bmZwdm0xM0B0ZXN0LmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzg2NzAwNjI5LCJleHAiOjE3ODY3MDQyMjl9.GjFwrthO6X1e47MPo_Q4XON8k8lUAGqvWLeeMbBJzk2Vqxogaaj5PjEvZhYp3D516MFFNLGTeBQsDU7f0ourvw"; //임시 토큰
     async function CreateOrder(e){
         e.preventDefault(); // form의 기본동작인 새로고침 막기
         let $article = document.getElementById("article").value;
@@ -55,7 +29,3 @@ ii. 내 주문목록 페이지
     console.log("주문한 수량:", data.data.items[0].quantity);
     console.log("총 가격:", data.data.items[0].orderPrice * data.data.items[0].quantity );
 };
-    
-</script>
-</body>
-</html>
