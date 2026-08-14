@@ -52,3 +52,38 @@ body {
   margin-bottom: 15px;
   cursor: pointer;
 }
+.filter-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.filter-box select,
+.filter-box input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.filter-box input {
+  width: 250px;
+}
+.filter-box button {
+  padding: 8px 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.filter-box button:hover {
+  background-color: #555;
+}
+.message-box {
+  grid-column: 1 / -1; 
+  text-align: center;
+  padding: 40px 0;
+  color: #777;
+  font-size: 16px;
+}
