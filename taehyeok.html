@@ -47,9 +47,13 @@ ii. 내 주문목록 페이지
         })
     });
     const data = await response.json(); //response을 json으로 변환(문자열로된 객체)
+
+    alert(data.message);
+    console.log("data전체",data);
     console.log("주문한 상품:", data.data.items[0].productName);
     console.log("주문한 상품 ID:", data.data.items[0].productId);
     console.log("주문한 수량:", data.data.items[0].quantity);
+    console.log("총 가격:", data.data.items[0].orderPrice * data.data.items[0].quantity );
 };
     
 </script>
