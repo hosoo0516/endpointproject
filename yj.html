@@ -2,37 +2,68 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>리뷰</title>
+    <title>상품 리뷰</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <form id="review-form">
-      <!-- 첫 번째 줄: 평점과 내용 입력창을 가로로 나란히 -->
-      <div class="form-row">
-        <div class="form-group rating-group">
-          <select id="rating" name="rating">
-            <option value="5">5점</option>
-            <option value="4">4점</option>
-            <option value="3">3점</option>
-            <option value="2">2점</option>
-            <option value="1">1점</option>
-          </select>
-        </div>
-        <div class="form-group content-group">
-          <input
-            type="text"
-            id="content"
-            name="content"
-            placeholder="리뷰를 작성해주세요"
-            required
-          />
-        </div>
-      </div>
+    <main>
+      <!-- 1. 리뷰 작성 영역 -->
+      <section class="review-form-section">
+        <h2>리뷰 작성</h2>
+        <form id="review-form">
+          <div class="form-row">
+            <!-- 평점 선택 (1~5점) -->
+            <div class="form-group rating-group">
+              <label for="rating">평점</label>
+              <select id="rating" name="rating">
+                <option value="5">★★★★★ (5점)</option>
+                <option value="4">★★★★☆ (4점)</option>
+                <option value="3">★★★☆☆ (3점)</option>
+                <option value="2">★★☆☆☆ (2점)</option>
+                <option value="1">★☆☆☆☆ (1점)</option>
+              </select>
+            </div>
 
-      <!-- 두 번째 줄: 등록 버튼 -->
-      <div class="form-btn-group">
-        <button type="submit" id="submit-review-btn">리뷰 등록</button>
-      </div>
-    </form>
+            <!-- 작성자 입력창 -->
+            <div class="form-group author-group">
+              <label for="author">작성자</label>
+              <input
+                type="text"
+                id="author"
+                placeholder="작성자 이름"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- 리뷰 내용 입력창 -->
+          <div class="form-group content-group">
+            <label for="content">리뷰 내용</label>
+            <input
+              type="text"
+              id="content"
+              placeholder="솔직한 리뷰를 작성해주세요"
+              required
+            />
+          </div>
+
+          <!-- 등록 버튼 -->
+          <div class="form-btn-group">
+            <button type="submit" id="submit-review-btn">리뷰 등록</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- 2. 리뷰 목록 표시 영역 -->
+      <section class="review-list-section">
+        <h2>구매자 리뷰 목록</h2>
+        <div id="review-list-container">
+          <!-- JS에서 createElement로 동적 생성 -->
+        </div>
+      </section>
+    </main>
+
+    <!-- 스크립트 연결 -->
+    <script src="js/review.js"></script>
   </body>
 </html>
