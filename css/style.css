@@ -1,0 +1,69 @@
+/* 폼 전체 여백 및 최대 너비 제한 */
+#review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 500px; /* 전체 폼이 너무 늘어나지 않게 한계 지정 */
+}
+
+/* 첫 번째 줄: 가로 나란히 정렬 */
+.form-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* 왼쪽 박스 (평점 선택창) */
+.rating-group {
+  flex: 0 0 90px; /* 평점 글자에 맞게 살짝 축소 */
+}
+
+/* 오른쪽 박스 (리뷰 내용 입력창) */
+.content-group {
+  flex: 1; /* 500px 안에서 균형 있게 채움 */
+}
+
+/* 셀렉트 박스 스타일 */
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 0.95rem;
+}
+
+/* 텍스트 입력창: 글자 크기 기준 자동 조절 + 최소/최대 너비 안전장치 */
+input[type="text"] {
+  width: 100%;
+  field-sizing: content; /* 글자 길이에 맞춰 반응 */
+  min-width: 200px; /* 최소 너비 */
+  max-width: 100%; /* 박스 밖으로 튀어나가지 않음 */
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 0.95rem;
+}
+
+/* 두 번째 줄 버튼 스타일 */
+.form-btn-group {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#submit-review-btn {
+  width: 90px; /* 평점 박스 너비(90px)와 딱 맞춰서 정렬 */
+  padding: 10px 0;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#submit-review-btn:hover {
+  background-color: #1d4ed8;
+}
