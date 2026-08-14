@@ -193,32 +193,3 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", handleReviewSubmit);
   }
 });
-
-document.addEventListener("DOMContentLoaded", () => {
-  // [테스트용 가짜 데이터로 렌더링 확인]
-  const mockReviews = [
-    {
-      id: 1,
-      userName: "김코딩",
-      rating: 5,
-      content: "배송도 정말 빠르고 품질이 기대 이상으로 좋습니다!",
-      createdAt: new Date().toISOString(), // 오늘 날짜 (방금 전으로 표시됨)
-    },
-    {
-      id: 2,
-      userName: "이테스트",
-      rating: 4,
-      content: "가성비 괜찮네요. 다음에도 재구매할 의향 있습니다.",
-      createdAt: "2026-08-14T03:00:00.000Z", // 몇 시간 전
-    },
-  ];
-
-  // 가짜 데이터를 화면에 즉시 출력
-  renderReviews(mockReviews);
-
-  // 폼 이벤트 연결
-  const form = document.getElementById("review-form");
-  if (form) {
-    form.addEventListener("submit", handleReviewSubmit);
-  }
-});
