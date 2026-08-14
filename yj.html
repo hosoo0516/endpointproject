@@ -7,12 +7,10 @@
   </head>
   <body>
     <main>
-      <!-- 1. 리뷰 작성 영역 (위쪽 박스) -->
       <section class="review-form-section">
         <h2>리뷰 작성</h2>
         <form id="review-form">
           <div class="form-row">
-            <!-- 평점 선택 -->
             <div class="form-group rating-group">
               <label for="rating">평점</label>
               <select id="rating" name="rating" required>
@@ -24,8 +22,6 @@
                 <option value="1">★☆☆☆☆ (1점)</option>
               </select>
             </div>
-
-            <!-- 작성자 입력창 -->
             <div class="form-group author-group">
               <label for="author">작성자</label>
               <input
@@ -36,8 +32,6 @@
               />
             </div>
           </div>
-
-          <!-- 리뷰 내용 입력창 -->
           <div class="form-group content-group">
             <label for="content">리뷰 내용</label>
             <input
@@ -47,24 +41,16 @@
               required
             />
           </div>
-
-          <!-- 등록 버튼 -->
           <div class="form-btn-group">
             <button type="submit" id="submit-review-btn">리뷰 등록</button>
           </div>
         </form>
       </section>
-
-      <!-- 2. 구매자 리뷰 목록 영역 (아래쪽 박스 - 딱 1개만 유지) -->
       <section class="review-list-section">
         <h2>구매자 리뷰 목록</h2>
-        <div id="review-list-container">
-          <!-- JS에서 카드들이 동적으로 들어가는 곳 -->
-        </div>
+        <div id="review-list-container"></div>
       </section>
     </main>
-
-    <!-- 스크립트 연결 -->
     <script src="js/review.js"></script>
   </body>
 </html>
