@@ -1,4 +1,4 @@
-const token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3bmZwdm0xM0B0ZXN0LmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzg2NzAwNjI5LCJleHAiOjE3ODY3MDQyMjl9.GjFwrthO6X1e47MPo_Q4XON8k8lUAGqvWLeeMbBJzk2Vqxogaaj5PjEvZhYp3D516MFFNLGTeBQsDU7f0ourvw"; //임시 토큰
+const token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3bmZwdm0xM0B0ZXN0LmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzg3MDE3OTk5LCJleHAiOjE3ODcwMjE1OTl9.OxfiwU6_aYoEZ0rROlSTE-t3eM9d6pENX76AQb5aKocPCQjhaQkctJBugUmE6eYxJtBN35t0Q3zAs4QpLfEgVQ"; //임시 토큰
     async function CreateOrder(e){
         e.preventDefault(); // form의 기본동작인 새로고침 막기
         let $article = document.getElementById("article").value;
@@ -22,10 +22,17 @@ const token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3bmZwdm0xM0B0ZXN0LmNvbSIsInJvbGUi
     });
     const data = await response.json(); //response을 json으로 변환(문자열로된 객체)
 
-    alert(data.message);
+
+    alert(`${data.message} \n
+        주문한 상품: ${data.data.items[0].productName}
+        주문한 상품 ID: ${data.data.items[0].productId}
+        주문한 수량: ${data.data.items[0].quantity}
+        총 가격: ${data.data.items[0].orderPrice * data.data.items[0].quantity}`);
+    
     console.log("data전체",data);
     console.log("주문한 상품:", data.data.items[0].productName);
     console.log("주문한 상품 ID:", data.data.items[0].productId);
     console.log("주문한 수량:", data.data.items[0].quantity);
     console.log("총 가격:", data.data.items[0].orderPrice * data.data.items[0].quantity );
+    
 };
